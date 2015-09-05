@@ -1,0 +1,175 @@
+"Influenza Hospitalization Rates (per 100,000 population) for the "FluSurv-NET Network (downloaded on Aug-29-2015)
+Influenza Division - Centers for Disease Control and Prevention.
+CATCHMENT,NETWORK,SEASON,MMWR-YEAR,MMWR-WEEK,AGE CATEGORY,RATE 
+Entire Network,FluSurv-NET,2014-15,2014,40,0-4 yr,0.1
+Entire Network,FluSurv-NET,2014-15,2014,41,0-4 yr,0.2
+Entire Network,FluSurv-NET,2014-15,2014,42,0-4 yr,0.3
+Entire Network,FluSurv-NET,2014-15,2014,43,0-4 yr,0.5
+Entire Network,FluSurv-NET,2014-15,2014,44,0-4 yr,0.6
+Entire Network,FluSurv-NET,2014-15,2014,45,0-4 yr,1.1
+Entire Network,FluSurv-NET,2014-15,2014,46,0-4 yr,1.4
+Entire Network,FluSurv-NET,2014-15,2014,47,0-4 yr,2.1
+Entire Network,FluSurv-NET,2014-15,2014,48,0-4 yr,3.9
+Entire Network,FluSurv-NET,2014-15,2014,49,0-4 yr,7.4
+Entire Network,FluSurv-NET,2014-15,2014,50,0-4 yr,11.6
+Entire Network,FluSurv-NET,2014-15,2014,51,0-4 yr,17.4
+Entire Network,FluSurv-NET,2014-15,2014,52,0-4 yr,24.1
+Entire Network,FluSurv-NET,2014-15,2014,53,0-4 yr,29.9
+Entire Network,FluSurv-NET,2014-15,2015,1,0-4 yr,33.5
+Entire Network,FluSurv-NET,2014-15,2015,2,0-4 yr,36.7
+Entire Network,FluSurv-NET,2014-15,2015,3,0-4 yr,40
+Entire Network,FluSurv-NET,2014-15,2015,4,0-4 yr,42.4
+Entire Network,FluSurv-NET,2014-15,2015,5,0-4 yr,43.9
+Entire Network,FluSurv-NET,2014-15,2015,6,0-4 yr,45.7
+Entire Network,FluSurv-NET,2014-15,2015,7,0-4 yr,47.5
+Entire Network,FluSurv-NET,2014-15,2015,8,0-4 yr,48.9
+Entire Network,FluSurv-NET,2014-15,2015,9,0-4 yr,50.8
+Entire Network,FluSurv-NET,2014-15,2015,10,0-4 yr,52.4
+Entire Network,FluSurv-NET,2014-15,2015,11,0-4 yr,53.7
+Entire Network,FluSurv-NET,2014-15,2015,12,0-4 yr,54.6
+Entire Network,FluSurv-NET,2014-15,2015,13,0-4 yr,55.3
+Entire Network,FluSurv-NET,2014-15,2015,14,0-4 yr,56.4
+Entire Network,FluSurv-NET,2014-15,2015,15,0-4 yr,57
+Entire Network,FluSurv-NET,2014-15,2015,16,0-4 yr,57.5
+Entire Network,FluSurv-NET,2014-15,2015,17,0-4 yr,58
+Entire Network,FluSurv-NET,2014-15,2014,40,5-17 yr,0
+Entire Network,FluSurv-NET,2014-15,2014,41,5-17 yr,0
+Entire Network,FluSurv-NET,2014-15,2014,42,5-17 yr,0.1
+Entire Network,FluSurv-NET,2014-15,2014,43,5-17 yr,0.1
+Entire Network,FluSurv-NET,2014-15,2014,44,5-17 yr,0.2
+Entire Network,FluSurv-NET,2014-15,2014,45,5-17 yr,0.3
+Entire Network,FluSurv-NET,2014-15,2014,46,5-17 yr,0.5
+Entire Network,FluSurv-NET,2014-15,2014,47,5-17 yr,0.9
+Entire Network,FluSurv-NET,2014-15,2014,48,5-17 yr,1.6
+Entire Network,FluSurv-NET,2014-15,2014,49,5-17 yr,2.5
+Entire Network,FluSurv-NET,2014-15,2014,50,5-17 yr,4.1
+Entire Network,FluSurv-NET,2014-15,2014,51,5-17 yr,6.2
+Entire Network,FluSurv-NET,2014-15,2014,52,5-17 yr,8.6
+Entire Network,FluSurv-NET,2014-15,2014,53,5-17 yr,9.6
+Entire Network,FluSurv-NET,2014-15,2015,1,5-17 yr,10.3
+Entire Network,FluSurv-NET,2014-15,2015,2,5-17 yr,11
+Entire Network,FluSurv-NET,2014-15,2015,3,5-17 yr,11.6
+Entire Network,FluSurv-NET,2014-15,2015,4,5-17 yr,12.2
+Entire Network,FluSurv-NET,2014-15,2015,5,5-17 yr,12.6
+Entire Network,FluSurv-NET,2014-15,2015,6,5-17 yr,13.1
+Entire Network,FluSurv-NET,2014-15,2015,7,5-17 yr,13.5
+Entire Network,FluSurv-NET,2014-15,2015,8,5-17 yr,14
+Entire Network,FluSurv-NET,2014-15,2015,9,5-17 yr,14.5
+Entire Network,FluSurv-NET,2014-15,2015,10,5-17 yr,14.9
+Entire Network,FluSurv-NET,2014-15,2015,11,5-17 yr,15.3
+Entire Network,FluSurv-NET,2014-15,2015,12,5-17 yr,15.9
+Entire Network,FluSurv-NET,2014-15,2015,13,5-17 yr,16.2
+Entire Network,FluSurv-NET,2014-15,2015,14,5-17 yr,16.5
+Entire Network,FluSurv-NET,2014-15,2015,15,5-17 yr,16.6
+Entire Network,FluSurv-NET,2014-15,2015,16,5-17 yr,16.7
+Entire Network,FluSurv-NET,2014-15,2015,17,5-17 yr,16.8
+Entire Network,FluSurv-NET,2014-15,2014,40,18-49 yr,0
+Entire Network,FluSurv-NET,2014-15,2014,41,18-49 yr,0.1
+Entire Network,FluSurv-NET,2014-15,2014,42,18-49 yr,0.2
+Entire Network,FluSurv-NET,2014-15,2014,43,18-49 yr,0.2
+Entire Network,FluSurv-NET,2014-15,2014,44,18-49 yr,0.3
+Entire Network,FluSurv-NET,2014-15,2014,45,18-49 yr,0.3
+Entire Network,FluSurv-NET,2014-15,2014,46,18-49 yr,0.4
+Entire Network,FluSurv-NET,2014-15,2014,47,18-49 yr,0.6
+Entire Network,FluSurv-NET,2014-15,2014,48,18-49 yr,1.2
+Entire Network,FluSurv-NET,2014-15,2014,49,18-49 yr,2.1
+Entire Network,FluSurv-NET,2014-15,2014,50,18-49 yr,3.2
+Entire Network,FluSurv-NET,2014-15,2014,51,18-49 yr,5.3
+Entire Network,FluSurv-NET,2014-15,2014,52,18-49 yr,7.5
+Entire Network,FluSurv-NET,2014-15,2014,53,18-49 yr,9.3
+Entire Network,FluSurv-NET,2014-15,2015,1,18-49 yr,10.9
+Entire Network,FluSurv-NET,2014-15,2015,2,18-49 yr,11.9
+Entire Network,FluSurv-NET,2014-15,2015,3,18-49 yr,12.7
+Entire Network,FluSurv-NET,2014-15,2015,4,18-49 yr,13.4
+Entire Network,FluSurv-NET,2014-15,2015,5,18-49 yr,14
+Entire Network,FluSurv-NET,2014-15,2015,6,18-49 yr,14.6
+Entire Network,FluSurv-NET,2014-15,2015,7,18-49 yr,15.1
+Entire Network,FluSurv-NET,2014-15,2015,8,18-49 yr,15.6
+Entire Network,FluSurv-NET,2014-15,2015,9,18-49 yr,16
+Entire Network,FluSurv-NET,2014-15,2015,10,18-49 yr,16.4
+Entire Network,FluSurv-NET,2014-15,2015,11,18-49 yr,16.9
+Entire Network,FluSurv-NET,2014-15,2015,12,18-49 yr,17.2
+Entire Network,FluSurv-NET,2014-15,2015,13,18-49 yr,17.6
+Entire Network,FluSurv-NET,2014-15,2015,14,18-49 yr,18
+Entire Network,FluSurv-NET,2014-15,2015,15,18-49 yr,18.2
+Entire Network,FluSurv-NET,2014-15,2015,16,18-49 yr,18.4
+Entire Network,FluSurv-NET,2014-15,2015,17,18-49 yr,18.6
+Entire Network,FluSurv-NET,2014-15,2014,40,50-64 yr,0
+Entire Network,FluSurv-NET,2014-15,2014,41,50-64 yr,0.2
+Entire Network,FluSurv-NET,2014-15,2014,42,50-64 yr,0.4
+Entire Network,FluSurv-NET,2014-15,2014,43,50-64 yr,0.5
+Entire Network,FluSurv-NET,2014-15,2014,44,50-64 yr,0.8
+Entire Network,FluSurv-NET,2014-15,2014,45,50-64 yr,1
+Entire Network,FluSurv-NET,2014-15,2014,46,50-64 yr,1.2
+Entire Network,FluSurv-NET,2014-15,2014,47,50-64 yr,1.5
+Entire Network,FluSurv-NET,2014-15,2014,48,50-64 yr,2.5
+Entire Network,FluSurv-NET,2014-15,2014,49,50-64 yr,4.4
+Entire Network,FluSurv-NET,2014-15,2014,50,50-64 yr,7.2
+Entire Network,FluSurv-NET,2014-15,2014,51,50-64 yr,12.3
+Entire Network,FluSurv-NET,2014-15,2014,52,50-64 yr,19.6
+Entire Network,FluSurv-NET,2014-15,2014,53,50-64 yr,26.2
+Entire Network,FluSurv-NET,2014-15,2015,1,50-64 yr,30.9
+Entire Network,FluSurv-NET,2014-15,2015,2,50-64 yr,34.2
+Entire Network,FluSurv-NET,2014-15,2015,3,50-64 yr,36.8
+Entire Network,FluSurv-NET,2014-15,2015,4,50-64 yr,39
+Entire Network,FluSurv-NET,2014-15,2015,5,50-64 yr,40.8
+Entire Network,FluSurv-NET,2014-15,2015,6,50-64 yr,42.7
+Entire Network,FluSurv-NET,2014-15,2015,7,50-64 yr,44.1
+Entire Network,FluSurv-NET,2014-15,2015,8,50-64 yr,45.7
+Entire Network,FluSurv-NET,2014-15,2015,9,50-64 yr,47
+Entire Network,FluSurv-NET,2014-15,2015,10,50-64 yr,48.4
+Entire Network,FluSurv-NET,2014-15,2015,11,50-64 yr,49.5
+Entire Network,FluSurv-NET,2014-15,2015,12,50-64 yr,50.8
+Entire Network,FluSurv-NET,2014-15,2015,13,50-64 yr,52.1
+Entire Network,FluSurv-NET,2014-15,2015,14,50-64 yr,53.3
+Entire Network,FluSurv-NET,2014-15,2015,15,50-64 yr,54.2
+Entire Network,FluSurv-NET,2014-15,2015,16,50-64 yr,54.5
+Entire Network,FluSurv-NET,2014-15,2015,17,50-64 yr,54.8
+Entire Network,FluSurv-NET,2014-15,2014,40,65+ yr,0.3
+Entire Network,FluSurv-NET,2014-15,2014,41,65+ yr,0.7
+Entire Network,FluSurv-NET,2014-15,2014,42,65+ yr,1.4
+Entire Network,FluSurv-NET,2014-15,2014,43,65+ yr,1.7
+Entire Network,FluSurv-NET,2014-15,2014,44,65+ yr,1.9
+Entire Network,FluSurv-NET,2014-15,2014,45,65+ yr,2.4
+Entire Network,FluSurv-NET,2014-15,2014,46,65+ yr,3.2
+Entire Network,FluSurv-NET,2014-15,2014,47,65+ yr,5.1
+Entire Network,FluSurv-NET,2014-15,2014,48,65+ yr,9.7
+Entire Network,FluSurv-NET,2014-15,2014,49,65+ yr,19.1
+Entire Network,FluSurv-NET,2014-15,2014,50,65+ yr,36.1
+Entire Network,FluSurv-NET,2014-15,2014,51,65+ yr,64.2
+Entire Network,FluSurv-NET,2014-15,2014,52,65+ yr,112.1
+Entire Network,FluSurv-NET,2014-15,2014,53,65+ yr,160.7
+Entire Network,FluSurv-NET,2014-15,2015,1,65+ yr,195.3
+Entire Network,FluSurv-NET,2014-15,2015,2,65+ yr,218.5
+Entire Network,FluSurv-NET,2014-15,2015,3,65+ yr,234.8
+Entire Network,FluSurv-NET,2014-15,2015,4,65+ yr,249.5
+Entire Network,FluSurv-NET,2014-15,2015,5,65+ yr,263.3
+Entire Network,FluSurv-NET,2014-15,2015,6,65+ yr,273.3
+Entire Network,FluSurv-NET,2014-15,2015,7,65+ yr,281
+Entire Network,FluSurv-NET,2014-15,2015,8,65+ yr,287.5
+Entire Network,FluSurv-NET,2014-15,2015,9,65+ yr,293
+Entire Network,FluSurv-NET,2014-15,2015,10,65+ yr,298.2
+Entire Network,FluSurv-NET,2014-15,2015,11,65+ yr,303.4
+Entire Network,FluSurv-NET,2014-15,2015,12,65+ yr,307.6
+Entire Network,FluSurv-NET,2014-15,2015,13,65+ yr,311.8
+Entire Network,FluSurv-NET,2014-15,2015,14,65+ yr,316.3
+Entire Network,FluSurv-NET,2014-15,2015,15,65+ yr,319.6
+Entire Network,FluSurv-NET,2014-15,2015,16,65+ yr,321.5
+Entire Network,FluSurv-NET,2014-15,2015,17,65+ yr,322.5
+
+ Disclaimer:
+"The Influenza Surveillance Network (FluSurv-NET) data are preliminary and subject to change as more "
+"data become available. FluSurv-NET conducts population-based surveillance for laboratory-confir"
+"rmed influenza related hospitalizations in children < 18 years of age (since 2003-04 influenza season) "
+"and adults (since 2005-06 influenza season). The FluSurv-NET covers over 70 counties in the 10 E"
+"merging Infections Program (EIP) states (CA, CO, CT, GA, MD, MN, NM, NY, OR, TN) and additional I"
+"fluenza Hospitalization Surveillance Project (IHSP) states. The IHSP began during the 2009-10 seas"
+"son to enhance surveillance during the 2009 H1N1 Pandemic. IHSP sites included IA, ID, MI, OK an"
+"d SD during 2009-2010 season; ID, MI, OH, OK, RI, and UT during the 2010-2011 season; MI, OH,"
+"RI, and UT during the 2011-2012 season; IA, MI, OH, RI, and UT during the 2012-2013 season; and "
+"MI, OH, and UT during the 2013-2014 and 2014-2015 seasons. Incidence rates (per 100,000 population)"
+"are calculated using the National Center for Health Statistics (NCHS) population estimates for the coun"
+"ties included in the surveillance catchment area. The rates provided are likely to be underestimated"
+"as influenza-related hospitalizations can be missed, either because testing is not performed, or"
+"because cases may be attributed to other causes of pneumonia or other common influenza-rel"
+"ated complications."
