@@ -7,6 +7,7 @@ public class DataProcessor {
 	
 	static float[][] weekAgeIncidence = new float[53][5]; // week, age (range): incidence
 	static float[][] weekStateLevel = new float[53][53]; // week, state: level
+	static float[][][] weekAgeStateScore = new float[53][5][53]; //week, age, state: score
 	
 	public static void main(String[] args) {
 		getData();
@@ -14,9 +15,6 @@ public class DataProcessor {
 	
 	public static void getData () {
 		try{
-			for (int i = 0; i < weekAgeIncidence.length; i++) {
-				Arrays.fill(weekAgeIncidence[i], 0.01f);
-			}
 			BufferedReader br = new BufferedReader(new FileReader(new File("data/FluSurveillance.csv")));
 			Scanner sc = new Scanner(br);
 			for (int i = 0; i < 3; i++) { 
@@ -55,6 +53,14 @@ public class DataProcessor {
 			System.out.println("file i/o error");
 			io.printStackTrace();
 		}
+		for (int i = 0; i < weekAgeIncidence.length; i++) {
+			for (int j = 0; j < weekAgeIncidence[i].length; j++) {
+				if(weekAgeIncidence[i][j] == 0){
+					weekAgeIncidence[i][j] = 0.01f;
+				}
+			}
+		}	
+//	
 		
 //		for (int i = 0; i < weekAgeIncidence.length; i++) {
 //			for (int j = 0; j < weekAgeIncidence[0].length; j++) {
@@ -63,8 +69,8 @@ public class DataProcessor {
 //			}
 //		}
 		
-		////////////////////////////////////////////////////////////
-		////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////
 		
 		try {
 		for (int i = 0; i < weekStateLevel.length; i++) {
@@ -109,17 +115,65 @@ public class DataProcessor {
 			System.out.println("i/o exception");
 			io.printStackTrace();
 		}
+
 		for (int i = 0; i < weekStateLevel.length; i++) {
-			for (int j = 0; j < weekStateLevel[0].length; j++) {
+			for (int j = 0; j < weekStateLevel[0].length; j++) {		
 				weekStateLevel[i][j] /= 7.0f;
+				if(weekStateLevel[i][j] == 0){
+					weekStateLevel[i][j] = 0.01f;
+				}	
 			}
 		}
 		
+
+//look at values
 //		for (int i = 0; i < weekStateLevel.length; i++) {
 //			for (int j = 0; j < weekStateLevel[0].length; j++) {
 //				float val = weekStateLevel[i][j];
 //				System.out.println("week: " + i + ", state: " + j + ", level: " + val);
 //			}
 //		}
+		
+		for(int i = 0; i < weekAgeStateScore.length; i++){
+			for(int j = 0; j < weekAgeStateScore[i].length; j++){
+				for(int k = 0; k < weekAgeStateScore[i][j].length; k++){
+					weekAgeStateScore[i][j][k] = (float)(weekAgeIncidence[i][j] * Math.sqrt((double)(weekStateLevel[i][k])));
+				}
+			}
+		}
+		
+		float[] meanDeviation = meanDeviation();
+		System.out.println(meanDeviation[0] + ", " + meanDeviation[1]);
+	}
+	
+	public static float[] meanDeviation(){
+		float sum = 0f;
+		float dataPointCounter = 0f;
+		
+		for(int i = 0; i < weekAgeStateScore.length; i++){
+			for(int j = 0; j < weekAgeStateScore[i].length; j++){
+				for(int k = 0; k < weekAgeStateScore[i][j].length; k++){
+					sum += weekAgeStateScore[i][j][k];
+					dataPointCounter++;
+				}
+			}
+		}
+		
+		float mean = sum / dataPointCounter;	
+		float sumDiffSquared = 0f;
+		
+		for(int i = 0; i < weekAgeStateScore.length; i++){
+			for(int j = 0; j < weekAgeStateScore[i].length; j++){
+				for(int k = 0; k < weekAgeStateScore[i][j].length; k++){
+					sumDiffSquared += Math.pow((weekAgeStateScore[i][j][k] - mean), 2);
+					dataPointCounter++;
+				}
+			}
+		}
+		
+		float std = (float)(Math.sqrt(sumDiffSquared / sum));
+		
+		float[] result = {mean , std};
+		return result;
 	}
 }
