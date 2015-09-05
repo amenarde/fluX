@@ -12,11 +12,6 @@ public class DataProcessor {
 	public static float mean;
 	public static float std;
 	
-	public static void main(String[] args) {
-		getData();
-		System.out.println(mean + ", " + std);
-	}
-	
 	public static void getData () {
 		try{
 			BufferedReader br = new BufferedReader(new FileReader(new File("data/FluSurveillance.csv")));
@@ -176,8 +171,7 @@ public class DataProcessor {
 			}
 		}
 		
-		float std = (float)(Math.sqrt(sumDiffSquared / sum));
-		
+		float std = (float)(Math.sqrt(sumDiffSquared / sum));		
 		float[] result = {mean , std};
 		return result;
 	}
