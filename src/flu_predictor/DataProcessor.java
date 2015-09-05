@@ -9,8 +9,12 @@ public class DataProcessor {
 	static float[][] weekStateLevel = new float[53][53]; // week, state: level
 	static float[][][] weekAgeStateScore = new float[53][5][53]; //week, age, state: score
 	
+	public static float mean;
+	public static float std;
+	
 	public static void main(String[] args) {
 		getData();
+		System.out.println(mean + ", " + std);
 	}
 	
 	public static void getData () {
@@ -143,7 +147,8 @@ public class DataProcessor {
 		}
 		
 		float[] meanDeviation = meanDeviation();
-		System.out.println(meanDeviation[0] + ", " + meanDeviation[1]);
+		mean = meanDeviation[0];
+		std = meanDeviation[1];
 	}
 	
 	public static float[] meanDeviation(){
