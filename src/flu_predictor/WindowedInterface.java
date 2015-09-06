@@ -6,15 +6,60 @@ import java.util.*;
 import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 import java.time.LocalDate;
 
 public class WindowedInterface extends JFrame
 {
+	public static HashMap<String, Integer> stateNumHash = new HashMap<String, Integer>();
+	public static HashMap<String, Integer> stateAbbrev = new HashMap<String, Integer>();
+	
+	static String state;
+	static int stateNum;
+	
+	public static int getStateNum() {
+		state = state.toLowerCase();
+		if (stateNumHash.size() == 0) {
+			try {
+				BufferedReader br = new BufferedReader(new FileReader(new File("data/states.csv")));
+				@SuppressWarnings("resource")
+				Scanner sc = new Scanner(br);
+				int num = 0;
+				while (sc.hasNextLine()) {
+					String line = sc.nextLine().toLowerCase();
+					@SuppressWarnings("resource")
+					Scanner lineSc = new Scanner(line).useDelimiter(",");
+					String s = lineSc.next();
+					String abbrev = lineSc.next();
+					s = s.substring(1, s.length() - 1);
+					abbrev = abbrev.substring(1, abbrev.length() - 1);
+					stateNumHash.put(s, num);
+					stateAbbrev.put(abbrev, num);
+					num++;
+				}
+			} catch (IOException io) {
+				System.out.println("file i/o error in states.csv file");
+			}
+		}
+		if (stateNumHash.containsKey(state)) {
+			return stateNumHash.get(state);
+		} else if (stateAbbrev.containsKey(state)){
+			return stateAbbrev.get(state);
+		} else {
+			System.out.println("input did not match a state... program aborted");
+			System.exit(1);
+			return -1;
+		}
+	}
 	private static final int WIDTH = 500;
 	private static final int HEIGHT = 600;
 	
 	private JLabel welcome1L, welcome2L, stateL, ageL, dateL, resultL;
-	private JTextField stateTF, ageTF, dateTF, resultTF;
+	private JTextField ageTF, dateTF, resultTF;
+	private JComboBox<String> stateList;
 	private JButton calculateB, exitB;
 	
 	//Button handlers:
@@ -32,18 +77,34 @@ public class WindowedInterface extends JFrame
 		dateL = new JLabel("<html><body>Date (no need to enter):</body></html>", SwingConstants.RIGHT);
 		resultL = new JLabel("<html><body>Your Result:</body></html>", SwingConstants.RIGHT);
 		
-		stateTF = new JTextField(10);
+		//statebox
+		String[] states = {"Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware",
+				"Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana",
+				"Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska",
+				"Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Ohio",
+				"Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas",
+				"Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming", "New York City",
+				"Puerto Rico", "District of Columbia"};
+				
+		stateList = new JComboBox<>(states);
+		
 		ageTF = new JTextField(10);
 		dateTF = new JTextField(10);
 		resultTF = new JTextField(10);
 		
-		//SPecify handlers for each button and add (register) ActionListeners to each button.
+		//Specify handlers for each button and add (register) ActionListeners to each button.
 		calculateB = new JButton("Calculate");
 		cbHandler = new CalculateButtonHandler();
 		calculateB.addActionListener(cbHandler);
 		exitB = new JButton("Exit");
 		ebHandler = new ExitButtonHandler();
 		exitB.addActionListener(ebHandler);
+		stateList.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JComboBox statesList = (JComboBox) e.getSource();
+				state = (String) statesList.getSelectedItem();
+			}
+		});
 		
 		setTitle("fluX");
 		Container pane = getContentPane();
@@ -53,7 +114,7 @@ public class WindowedInterface extends JFrame
 		pane.add(welcome1L);
 		pane.add(welcome2L);
 		pane.add(stateL);
-		pane.add(stateTF);
+		pane.add(stateList);
 		pane.add(ageL);
 		pane.add(ageTF);
 		pane.add(dateL);
@@ -72,15 +133,12 @@ public class WindowedInterface extends JFrame
 	{
 		public void actionPerformed(ActionEvent e)
 		{
-			String state;
-			int stateNum;
 			int age;
 			int dayNum;
 			int week;
 			
-			state = stateTF.getText();
-			stateNum = Interface.getStateNum(state);
-					
+			stateNum = WindowedInterface.getStateNum();
+				
 			age = Integer.parseInt(ageTF.getText());
 			if(age < 5){
 				age = 0;
@@ -123,6 +181,4 @@ public class WindowedInterface extends JFrame
 	{
 		WindowedInterface mainInstance = new WindowedInterface();
 	}
-	
-}
-
+}	
