@@ -31,7 +31,4 @@ public class LocationIndexer{
 		return latLong;
 	}
 	
-	public static void main(String[] args) throws IOException{
-		float[] latLong = latLong();		
-	}
 }

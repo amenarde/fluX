@@ -90,7 +90,6 @@ public class DataProcessor {
 			lineSc.next();
 			
 			if (badStates.contains(state)){
-				// System.out.println("fuckin' nevada");
 				lineSc.next();
 			}
 			String levelPlusNum = lineSc.next();
@@ -190,8 +189,6 @@ public class DataProcessor {
 		}
 		
 		float ageStd = (float)(Math.sqrt(sumDiffSquared / sum));	
-		//
-		System.out.println(ageMean + ", " + ageStd);
 		float[] result = {ageMean , ageStd};
 		return result;
 	}

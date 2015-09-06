@@ -14,6 +14,7 @@ import java.time.LocalDate;
 
 public class WindowedInterface extends JFrame
 {
+	public boolean outbreakInterfaceIsOpen;
 	
 	public static HashMap<String, Integer> stateNumHash = new HashMap<String, Integer>();
 	public static HashMap<String, Integer> stateAbbrev = new HashMap<String, Integer>();
@@ -72,10 +73,11 @@ public class WindowedInterface extends JFrame
 	
 	public WindowedInterface()
 	{
+		outbreakInterfaceIsOpen = false;
 		getContentPane().setBackground(Color.WHITE);
 		
 		welcome1L = new JLabel(new ImageIcon("data/fluxlogosmall.png"));
-		welcome2L = new JLabel("<html><body>We can evaluate your flu risk using location, age, and seasonal data from the CDC!</body></html>");
+		welcome2L = new JLabel("<html><body>fluX can evaluate your flu risk using location, age, and seasonal data from the CDC!</body></html>");
 		stateL = new JLabel("<html><body>Please enter your state of residence or New York City, District of Columbia, or Puerto Rico:</body></html>", SwingConstants.RIGHT);
 		ageL = new JLabel("<html><body>Please enter your age:</body></html>", SwingConstants.RIGHT);
 		dateL = new JLabel("<html><body>Date (no need to enter):</body></html>", SwingConstants.RIGHT);
@@ -110,7 +112,7 @@ public class WindowedInterface extends JFrame
 			}
 		});
 		
-		setTitle("fluX");
+		setTitle("fluX Flu Risk Evaluator");
 		Container pane = getContentPane();
 		pane.setLayout(new GridLayout(6, 2));
 		
@@ -180,6 +182,11 @@ public class WindowedInterface extends JFrame
 				result2TA.setWrapStyleWord(true);
 				result1TA.append(results[0]);
 				result2TA.append(results[1]);
+				
+				if(!outbreakInterfaceIsOpen){
+					new OutbreakInterface();
+					outbreakInterfaceIsOpen = true;
+				}
 			}
 		}
 	}
@@ -190,10 +197,5 @@ public class WindowedInterface extends JFrame
 		{
 			System.exit(0);
 		}
-	}
-	
-	public static void main(String[] args)
-	{
-		new WindowedInterface();
 	}
 }	
