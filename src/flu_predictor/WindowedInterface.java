@@ -17,8 +17,8 @@ public class WindowedInterface extends JFrame
 	public static HashMap<String, Integer> stateNumHash = new HashMap<String, Integer>();
 	public static HashMap<String, Integer> stateAbbrev = new HashMap<String, Integer>();
 	
-	static String state;
-	static int stateNum;
+	public static String state = "";
+	public static int stateNum = 0;
 	
 	public static int getStateNum() {
 		state = state.toLowerCase();
@@ -55,10 +55,10 @@ public class WindowedInterface extends JFrame
 		}
 	}
 	private static final int WIDTH = 500;
-	private static final int HEIGHT = 600;
+	private static final int HEIGHT = 700;
 	
-	private JLabel welcome1L, welcome2L, stateL, ageL, dateL, resultL;
-	private JTextField ageTF, dateTF, resultTF;
+	private JLabel welcome1L, welcome2L, stateL, ageL, dateL, result1L, result2L;
+	private JTextField ageTF, dateTF, result1TF, result2TF;
 	private JComboBox<String> stateList;
 	private JButton calculateB, exitB;
 	
@@ -75,10 +75,11 @@ public class WindowedInterface extends JFrame
 		stateL = new JLabel("<html><body>Please enter your state of residence or New York City, District of Columbia, or Puerto Rico:</body></html>", SwingConstants.RIGHT);
 		ageL = new JLabel("<html><body>Please enter your age:</body></html>", SwingConstants.RIGHT);
 		dateL = new JLabel("<html><body>Date (no need to enter):</body></html>", SwingConstants.RIGHT);
-		resultL = new JLabel("<html><body>Your Result:</body></html>", SwingConstants.RIGHT);
+		result1L = new JLabel("<html><body>Your Result1:</body></html>", SwingConstants.RIGHT);
+		result2L = new JLabel("<html><body>Your Result2:</body></html>", SwingConstants.RIGHT);
 		
 		//statebox
-		String[] states = {"Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware",
+		String[] states = {"", "Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware",
 				"Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana",
 				"Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska",
 				"Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Ohio",
@@ -90,7 +91,8 @@ public class WindowedInterface extends JFrame
 		
 		ageTF = new JTextField(10);
 		dateTF = new JTextField(10);
-		resultTF = new JTextField(10);
+		result1TF = new JTextField(10);
+		result2TF = new JTextField(10);
 		
 		//Specify handlers for each button and add (register) ActionListeners to each button.
 		calculateB = new JButton("Calculate");
@@ -108,7 +110,7 @@ public class WindowedInterface extends JFrame
 		
 		setTitle("fluX");
 		Container pane = getContentPane();
-		pane.setLayout(new GridLayout(6, 2));
+		pane.setLayout(new GridLayout(7, 2));
 		
 		//Add things to the pane in the order you want them to appear (left to right, top to bottom)
 		pane.add(welcome1L);
@@ -119,8 +121,10 @@ public class WindowedInterface extends JFrame
 		pane.add(ageTF);
 		pane.add(dateL);
 		pane.add(dateTF);
-		pane.add(resultL);
-		pane.add(resultTF);
+		pane.add(result1L);
+		pane.add(result1TF);
+		pane.add(result2L);
+		pane.add(result2TF);
 		pane.add(calculateB);
 		pane.add(exitB);
 		
@@ -137,35 +141,41 @@ public class WindowedInterface extends JFrame
 			int dayNum;
 			int week;
 			
-			stateNum = WindowedInterface.getStateNum();
-				
-			age = Integer.parseInt(ageTF.getText());
-			if(age < 5){
-				age = 0;
-			}
-			else if(age < 18){
-				age = 1;
-			}
-			else if(age < 50){
-				age = 2;
-			}
-			else if(age < 65){
-				age = 3;
+			if(state.equals("")){
+				result1TF.setText("Please choose a state.");
 			}
 			else{
-				age = 4;
+				stateNum = getStateNum();
+					
+				age = Integer.parseInt(ageTF.getText());
+				if(age < 5){
+					age = 0;
+				}
+				else if(age < 18){
+					age = 1;
+				}
+				else if(age < 50){
+					age = 2;
+				}
+				else if(age < 65){
+					age = 3;
+				}
+				else{
+					age = 4;
+				}
+				
+				LocalDate today = LocalDate.now();
+				dayNum = today.getDayOfYear();
+				week = (int)(dayNum / 7);
+				
+				DataProcessor.getData();
+				user = new Patient(age, week, stateNum);	
+				float[] risk = CalculateRisk.risk();
+				
+				dateTF.setText("" + today);
+				result1TF.setText("" + risk[0]);
+				result2TF.setText("" + risk[1]);
 			}
-			
-			LocalDate today = LocalDate.now();
-			dayNum = today.getDayOfYear();
-			week = (int)(dayNum / 7);
-			
-			DataProcessor.getData();
-			user = new Patient(age, week, stateNum);	
-			float risk = CalculateRisk.risk();
-			
-			dateTF.setText("" + today);
-			resultTF.setText("" + risk);
 		}
 	}
 	

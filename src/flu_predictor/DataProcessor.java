@@ -12,6 +12,9 @@ public class DataProcessor {
 	public static float mean;
 	public static float std;
 	
+	public static float ageMean;
+	public static float ageStd;
+	
 	public static void getData () {
 		try{
 			BufferedReader br = new BufferedReader(new FileReader(new File("data/FluSurveillance.csv")));
@@ -188,7 +191,7 @@ public class DataProcessor {
 			}
 		}
 		
-		float mean = sum / dataPointCounter;	
+		float ageMean = sum / dataPointCounter;	
 		float sumDiffSquared = 0f;
 		
 		for(int i = 0; i < weekAgeStateScore.length; i++){
@@ -199,7 +202,7 @@ public class DataProcessor {
 			}
 		}
 		
-		float std = (float)(Math.sqrt(sumDiffSquared / sum));		
+		float ageStd = (float)(Math.sqrt(sumDiffSquared / sum));		
 		float[] result = {mean , std};
 		return result;
 	}
