@@ -56,10 +56,11 @@ public class WindowedInterface extends JFrame
 		}
 	}
 	private static final int WIDTH = 500;
-	private static final int HEIGHT = 700;
+	private static final int HEIGHT = 600;
 	
-	private JLabel welcome1L, welcome2L, stateL, ageL, dateL, result1L, result2L;
-	private JTextField ageTF, dateTF, result1TF, result2TF;
+	private JLabel welcome1L, welcome2L, stateL, ageL, dateL;
+	private JTextField ageTF, dateTF;
+	private JTextArea result1TA, result2TA;
 	private JComboBox<String> stateList;
 	private JButton calculateB, exitB;
 	
@@ -78,8 +79,6 @@ public class WindowedInterface extends JFrame
 		stateL = new JLabel("<html><body>Please enter your state of residence or New York City, District of Columbia, or Puerto Rico:</body></html>", SwingConstants.RIGHT);
 		ageL = new JLabel("<html><body>Please enter your age:</body></html>", SwingConstants.RIGHT);
 		dateL = new JLabel("<html><body>Date (no need to enter):</body></html>", SwingConstants.RIGHT);
-		result1L = new JLabel("<html><body>Your Result1:</body></html>", SwingConstants.RIGHT);
-		result2L = new JLabel("<html><body>Your Result2:</body></html>", SwingConstants.RIGHT);
 		
 		//statebox
 		String[] states = {"", "Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware",
@@ -94,8 +93,8 @@ public class WindowedInterface extends JFrame
 		
 		ageTF = new JTextField(10);
 		dateTF = new JTextField(10);
-		result1TF = new JTextField(10);
-		result2TF = new JTextField(10);
+		result1TA = new JTextArea();
+		result2TA = new JTextArea();
 		
 		//Specify handlers for each button and add (register) ActionListeners to each button.
 		calculateB = new JButton("Calculate");
@@ -113,7 +112,7 @@ public class WindowedInterface extends JFrame
 		
 		setTitle("fluX");
 		Container pane = getContentPane();
-		pane.setLayout(new GridLayout(7, 2));
+		pane.setLayout(new GridLayout(6, 2));
 		
 		//Add things to the pane in the order you want them to appear (left to right, top to bottom)
 		pane.add(welcome1L);
@@ -124,10 +123,8 @@ public class WindowedInterface extends JFrame
 		pane.add(ageTF);
 		pane.add(dateL);
 		pane.add(dateTF);
-		pane.add(result1L);
-		pane.add(result1TF);
-		pane.add(result2L);
-		pane.add(result2TF);
+		pane.add(result1TA);
+		pane.add(result2TA);
 		pane.add(calculateB);
 		pane.add(exitB);
 		
@@ -145,7 +142,7 @@ public class WindowedInterface extends JFrame
 			int week;
 			
 			if(state.equals("")){
-				result1TF.setText("Please choose a state.");
+				dateTF.setText("Please choose a state.");
 			}
 			else{
 				stateNum = getStateNum();
@@ -170,14 +167,19 @@ public class WindowedInterface extends JFrame
 				LocalDate today = LocalDate.now();
 				dayNum = today.getDayOfYear();
 				week = (int)(dayNum / 7);
-						
+//main				
 				user = new Patient(age, week, stateNum);	
 				DataProcessor.getData();
 				float[] risk = CalculateRisk.risk();
-				
+				String[] results = EvaluateRisk.advice(risk);
+//				
 				dateTF.setText("" + today);
-				result1TF.setText("" + risk[0]);
-				result2TF.setText("" + risk[1]);
+				result1TA.setLineWrap(true);
+				result2TA.setLineWrap(true);
+				result1TA.setWrapStyleWord(true);
+				result2TA.setWrapStyleWord(true);
+				result1TA.append(results[0]);
+				result2TA.append(results[1]);
 			}
 		}
 	}

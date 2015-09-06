@@ -172,7 +172,7 @@ public class DataProcessor {
 		
 		
 		for(int i = 0; i < weekAgeStateScore.length; i++){
-			for(int j = 0; j < weekAgeStateScore[i][age][j]; j++){
+			for(int j = 0; j < weekAgeStateScore[i][age].length; j++){
 					sum += weekAgeStateScore[i][age][j];
 					dataPointCounter++;
 			}
@@ -182,7 +182,7 @@ public class DataProcessor {
 		float sumDiffSquared = 0f;
 		
 		for(int i = 0; i < weekAgeStateScore.length; i++){
-			for(int j = 0; j < weekAgeStateScore[i][age][j]; j++){
+			for(int j = 0; j < weekAgeStateScore[i][age].length; j++){
 					sumDiffSquared += Math.pow((weekAgeStateScore[i][age][j] - mean), 2);
 					dataPointCounter++;
 				
