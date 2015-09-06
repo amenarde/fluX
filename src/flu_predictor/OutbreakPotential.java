@@ -20,19 +20,13 @@ public class OutbreakPotential {
 	}
 	
 	public static LinkedList<Integer> assessOutbreaks(float[][] dists) {
-		LinkedList<Integer> indicesToConsider = new LinkedList<Integer>();
 		LinkedList<Integer> outbreakPatients = new LinkedList<Integer>();
-		for (int i = 0; i < dists.length; i++) {
-			indicesToConsider.add(i);
-		}
-		while (indicesToConsider.size() > 0) {
-			int curr = indicesToConsider.get(0);
+		for (int curr = 0; curr < dists.length; curr++) {
 			int count = 0;
-			float[][] distArray = getDistArray();
-			for (int i = 0; i < indicesToConsider.size(); i++) {
-				if (distArray[curr][i] < 10.0f) { // 10 kilometers
+			for (int comp = 0; comp < dists.length; comp++) {
+				if (dists[curr][comp] < 10.0f) {
 					count++;
-				}
+				} 
 			}
 			if (count >= 3) {
 				outbreakPatients.add(curr);

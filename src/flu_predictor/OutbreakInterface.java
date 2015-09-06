@@ -151,7 +151,8 @@ public class OutbreakInterface extends JFrame
 			result1TA.setWrapStyleWord(true);
 			result2TA.setWrapStyleWord(true);
 			result1TA.append("Your information has been added to our database.");
-			result2TA.append("");
+			result2TA.append("Total patients affected by an outbreak: " + 
+			OutbreakPotential.assessOutbreaks(OutbreakPotential.getDistArray()).size());
 		}
 	}
 	
