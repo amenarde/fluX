@@ -179,11 +179,10 @@ public class DataProcessor {
 	public static float[] ageMeanDeviation(int age){ //age being 0-4 categories
 		float sum = 0f;
 		float dataPointCounter = 0f;
-		this.age = age;
 		
 		
 		for(int i = 0; i < weekAgeStateScore.length; i++){
-			for(int j = 0; j < weekAgeStateScore[i][age][j].length; j++){
+			for(int j = 0; j < weekAgeStateScore[i][age][j]; j++){
 					sum += weekAgeStateScore[i][age][j];
 					dataPointCounter++;
 			}
@@ -193,7 +192,7 @@ public class DataProcessor {
 		float sumDiffSquared = 0f;
 		
 		for(int i = 0; i < weekAgeStateScore.length; i++){
-			for(int j = 0; j < weekAgeStateScore[i][age][j].length; j++){
+			for(int j = 0; j < weekAgeStateScore[i][age][j]; j++){
 					sumDiffSquared += Math.pow((weekAgeStateScore[i][age][j] - mean), 2);
 					dataPointCounter++;
 				
