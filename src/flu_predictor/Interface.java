@@ -35,6 +35,7 @@ public class Interface {
 	}
 	
 	public static void main(String[] args){
+		
 		Scanner in = new Scanner(System.in);
 		
 		System.out.println("Welcome to fluX!");
@@ -70,8 +71,6 @@ public class Interface {
 		LocalDate today = LocalDate.now();
 		int dayNum = today.getDayOfYear();
 		int week = (int)(dayNum / 7);
-		
-		week = 3;
 		
 		DataProcessor.getData();
 		user = new Patient(age, week, stateInteger);	
