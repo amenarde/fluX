@@ -14,6 +14,7 @@ import java.time.LocalDate;
 
 public class WindowedInterface extends JFrame
 {
+	
 	public static HashMap<String, Integer> stateNumHash = new HashMap<String, Integer>();
 	public static HashMap<String, Integer> stateAbbrev = new HashMap<String, Integer>();
 	
@@ -70,7 +71,9 @@ public class WindowedInterface extends JFrame
 	
 	public WindowedInterface()
 	{
-		welcome1L = new JLabel("<html><body>Welcome to fluX!</body></html>", SwingConstants.CENTER);
+		getContentPane().setBackground(Color.WHITE);
+		
+		welcome1L = new JLabel(new ImageIcon("data/fluxlogosmall.png"));
 		welcome2L = new JLabel("<html><body>We can evaluate your flu risk using location, age, and seasonal data from the CDC!</body></html>");
 		stateL = new JLabel("<html><body>Please enter your state of residence or New York City, District of Columbia, or Puerto Rico:</body></html>", SwingConstants.RIGHT);
 		ageL = new JLabel("<html><body>Please enter your age:</body></html>", SwingConstants.RIGHT);
@@ -167,9 +170,9 @@ public class WindowedInterface extends JFrame
 				LocalDate today = LocalDate.now();
 				dayNum = today.getDayOfYear();
 				week = (int)(dayNum / 7);
-				
-				DataProcessor.getData();
+						
 				user = new Patient(age, week, stateNum);	
+				DataProcessor.getData();
 				float[] risk = CalculateRisk.risk();
 				
 				dateTF.setText("" + today);
@@ -189,6 +192,6 @@ public class WindowedInterface extends JFrame
 	
 	public static void main(String[] args)
 	{
-		WindowedInterface mainInstance = new WindowedInterface();
+		new WindowedInterface();
 	}
 }	

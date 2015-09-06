@@ -62,14 +62,6 @@ public class DataProcessor {
 				}
 			}
 		}	
-//	
-		
-//		for (int i = 0; i < weekAgeIncidence.length; i++) {
-//			for (int j = 0; j < weekAgeIncidence[0].length; j++) {
-//				float val = weekAgeIncidence[i][j];
-//				System.out.println("week: " + i + ", age: " + j + ", incidence: " + val);
-//			}
-//		}
 		
 ////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////
@@ -127,15 +119,6 @@ public class DataProcessor {
 			}
 		}
 		
-
-//look at values
-//		for (int i = 0; i < weekStateLevel.length; i++) {
-//			for (int j = 0; j < weekStateLevel[0].length; j++) {
-//				float val = weekStateLevel[i][j];
-//				System.out.println("week: " + i + ", state: " + j + ", level: " + val);
-//			}
-//		}
-		
 		for(int i = 0; i < weekAgeStateScore.length; i++){
 			for(int j = 0; j < weekAgeStateScore[i].length; j++){
 				for(int k = 0; k < weekAgeStateScore[i][j].length; k++){
@@ -147,6 +130,10 @@ public class DataProcessor {
 		float[] meanDeviation = meanDeviation();
 		mean = meanDeviation[0];
 		std = meanDeviation[1];
+		
+		float[] ageMeanDeviation = ageMeanDeviation(WindowedInterface.user.getAge());
+		ageMean = ageMeanDeviation[0];
+		ageStd = ageMeanDeviation[1];
 	}
 	
 	public static float[] meanDeviation(){
@@ -202,8 +189,10 @@ public class DataProcessor {
 			}
 		}
 		
-		float ageStd = (float)(Math.sqrt(sumDiffSquared / sum));		
-		float[] result = {mean , std};
+		float ageStd = (float)(Math.sqrt(sumDiffSquared / sum));	
+		//
+		System.out.println(ageMean + ", " + ageStd);
+		float[] result = {ageMean , ageStd};
 		return result;
 	}
 }
